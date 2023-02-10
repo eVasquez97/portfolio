@@ -1,0 +1,118 @@
+{
+  "education": [
+    {
+      "institute": "Universidad Católica de Honduras",
+      "title": "Computer Science Engineer",
+      "time": "2015 - June/2020",
+      "image": "",
+      "url": "https://unicah.edu/",
+      "headerColor": "#018f45"
+    },
+    {
+      "institute": "El Buen Pastor Episcopal Institute",
+      "title": "Bachelor's degree",
+      "time": "2003 - 2015",
+      "image": "",
+      "url": "https://www.facebook.com/EBPHonduras/",
+      "headerColor": ""
+    }
+  ],
+  "courses": [
+    {
+      "name": "CCNA (Level 200)",
+      "time": "Issued on Oct. 4, 2020",
+      "certificationID": "a5961b75-3832-4326-99e4-f508598440fb",
+      "headerColor": "transparent",
+      "url": "https://www.credly.com/badges/a5961b75-3832-4326-99e4-f508598440fb?source=linked_in_profile",
+      "company": "Cisco",
+      "img": "http://www.mercadoit.com/blog/wp-content/uploads/2019/11/cisco-lan-wan-qos.jpg"
+    },
+    {
+      "name": "Python3",
+      "time": "Issued on 2018",
+      "certificationID": "1073-8851434",
+      "headerColor": "transparent",
+      "url": "https://www.sololearn.com/Certificate/1073-8851434/pdf/",
+      "company": "SoloLearn",
+      "img": "https://i.blogs.es/1d8a5b/python1/1366_2000.jpg"
+    },
+    {
+      "name": "Querying with Transact-SQL",
+      "time": "Issued on 2016",
+      "certificationID": "DAT201-x",
+      "headerColor": "transparent",
+      "url": "https://learning.edx.org/course/course-v1:Microsoft+DAT201x+3T2017/home",
+      "company": "EDx",
+      "img": "https://milesbreedsolutions.com/wp-content/uploads/2018/04/Microsoft-Course-20761-Querying-Data-with-Transact-SQL.jpg"
+    },
+    {
+      "name": "Comandos básicos para terminal",
+      "time": "2019",
+      "certificationID": "Course updated on 2020*",
+      "headerColor": "transparent",
+      "url": "https://codigofacilito.com/videos/como-iniciar-comandos-basicos-5c82bb9f-2997-4ffa-9b15-da67488cf05a",
+      "company": "Código Facilito",
+      "img": "https://codigofacilito.com/thumb.jpg"
+    }
+  ],
+  "programmingLanguages": [
+    {
+      "name": "React Js",
+      "experience": "> 3 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg"
+    },
+    {
+      "name": "React Native",
+      "experience": "̴  2 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg"
+    },
+    {
+      "name": "Python",
+      "experience": "1 year",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/python-5.svg"
+    },
+    {
+      "name": "C#",
+      "experience": "2 and a half years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/c--4.svg"
+    },
+    {
+      "name": "C++",
+      "experience": "2 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/c.svg"
+    },
+    {
+      "name": "Visual Basic",
+      "experience": "  2 years",
+      "description": "̴",
+      "logo": "https://cdn.worldvectorlogo.com/logos/vbnet-1.svg"
+    }
+  ],
+  "socialMedia": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/eduardo.b.vasquez.1/",
+      "icon": "FaFacebookF"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/eduardovasquez97/?hl=es-la",
+      "icon": "FaInstagram"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/EBladimirVL",
+      "icon": "FaTwitter"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/eduardo-v%C3%A1squez-lavaire-aba5bb1a0/",
+      "icon": "FaLinkedinIn"
+    }
+  ]
+}
