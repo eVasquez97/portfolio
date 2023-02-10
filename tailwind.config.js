@@ -12,6 +12,10 @@ module.exports = {
         firaCode: "FiraCode NF",
       },
     },
+    screens: {
+      showXs: { max: "480px" },
+      hideXs: { min: "480px" },
+    },
   },
   plugins: [],
 };

@@ -1,7 +1,7 @@
 import MediaButton from "@/components/atoms";
+import SectionTitle from "@/components/molecules";
 import Head from "next/head";
 import { useState } from "react";
-import { FaCode } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -9,6 +9,54 @@ import data from "../utils/data.json";
 
 export default function Home() {
   const [darkMode, setdarkMode] = useState(false);
+
+  function renderCourses() {
+    return data.courses.map((course) => {
+      return (
+        <div key={course.name}>
+          <p className="font-firaCode text-lime-400 dark:text-red-500  font-light text-xs">
+            {course.name} - {course.company}
+          </p>
+          <span className="font-firaCode text-xs font-light text-neutral-50">
+            {course.time}
+          </span>
+        </div>
+      );
+    });
+  }
+
+  function renderEducation() {
+    return data.education.map((ed) => {
+      return (
+        <div key={ed.title} className="pb-2">
+          <p className="font-firaCode text-lime-400 dark:text-red-500  font-light text-xs">
+            {ed.institute}
+          </p>
+          <p className="font-firaCode text-neutral-200 font-light text-xs">
+            {ed.title}
+          </p>
+          <p className="font-firaCode text-neutral-50 font-light text-xs">
+            {ed.time}
+          </p>
+        </div>
+      );
+    });
+  }
+
+  function renderLanguage() {
+    return data.programmingLanguages.map((lang) => {
+      return (
+        <div key={lang.name} className="pb-3">
+          <p className="font-firaCode text-lime-400 dark:text-red-500 font-light text-xs">
+            {lang.name}
+          </p>
+          <p className="font-firaCode text-neutral-200 font-light text-xs">
+            {lang.experience}
+          </p>
+        </div>
+      );
+    });
+  }
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -18,8 +66,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-4 md:p-6 bg-neutral-200 dark:bg-zinc-800 min-h-screen">
-        <div className=" bg-zinc-800 rounded-md shadow-lg dark:shadow-red-900 max-w-screen-lg m-auto">
+      <main className="p-4 md:p-6 pt-4 pb-6 bg-neutral-200 dark:bg-zinc-800 min-h-screen">
+        <div className=" bg-zinc-800 rounded-md shadow-lg dark:shadow-red-900 max-w-5xl m-auto">
           <div className="bg-slate-200 dark:bg-gray-600 p-1 shadow-md border-solid border-x border-y border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md">
             <div className="inline-flex flex-row">
               {data.socialMedia.map((social) => {
@@ -32,38 +80,43 @@ export default function Home() {
                 );
               })}
             </div>
-            <h1 className="font-semibold text-center dark:text-neutral-200 text-slate-800 font-firaCode m-auto text-sm">
+            <h1 className="font-semibold text-center dark:text-neutral-200 text-slate-800 font-firaCode m-auto text-sm showXs:hidden">
               Eduardo B. Vásquez Lavaire
             </h1>
-            <FaLightbulb
-              className="cursor-pointer mt-2 mr-3 dark:text-red-700"
-              onClick={() => setdarkMode(!darkMode)}
-            />
-            <FaGithub
-              className="cursor-pointer mt-2 mr-3 dark:text-red-700"
-              onClick={() => setdarkMode(!darkMode)}
-            />
-            <FaDownload
-              className="cursor-pointer mt-2 mr-3 dark:text-red-700"
-              onClick={() => setdarkMode(!darkMode)}
-            />
+            <div className="inline-flex flex-row">
+              <FaLightbulb
+                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+                onClick={() => setdarkMode(!darkMode)}
+              />
+              <FaGithub
+                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+                onClick={() => setdarkMode(!darkMode)}
+              />
+              <FaDownload
+                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+                onClick={() => setdarkMode(!darkMode)}
+              />
+            </div>
           </div>
           <div className="p-3">
-            <FaCode className="dark:text-red-500 text-white w-4" />
-            <br />
-            {data.courses.map((course) => {
-              return (
-                <div key={course.name}>
-                  <p className="font-firaCode text-neutral-200 font-light text-xs">
-                    {"$ "}
-                    {course.name} - {course.company}
-                  </p>
-                  <span className="font-firaCode text-xs font-light text-neutral-50">
-                    {course.time}
-                  </span>
-                </div>
-              );
-            })}
+            <h1 className="font-normal text-center text-neutral-200 dark:text-red-500 font-firaCode m-auto text-sm hideXs:hidden">
+              Eduardo B. Vásquez Lavaire
+            </h1>
+
+            <div>
+              <SectionTitle text="Skills" icon="FaCode" size="20" />
+              {renderLanguage()}
+            </div>
+
+            <div>
+              <SectionTitle text="Education" icon="FaBook" size="20" />
+              {renderEducation()}
+            </div>
+
+            <div>
+              <SectionTitle text="Courses" icon="FaBook" size="20" />
+              {renderCourses()}
+            </div>
           </div>
         </div>
       </main>
