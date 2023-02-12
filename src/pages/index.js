@@ -1,25 +1,21 @@
-import MediaButton from "@/components/atoms";
-import SectionTitle from "@/components/molecules";
 import Head from "next/head";
 import { useState } from "react";
-import { FaLightbulb } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { MediaButton, Text } from "@/components/atoms";
+import { SectionTitle, Skill } from "@/components/molecules";
+import { TfiLightBulb } from "react-icons/tfi";
+import { TfiDownload } from "react-icons/tfi";
+import { TfiGithub } from "react-icons/tfi";
 import data from "../utils/data.json";
 
 export default function Home() {
   const [darkMode, setdarkMode] = useState(false);
 
   function renderCourses() {
-    return data.courses.map((course) => {
+    return data.courses.map((cr) => {
       return (
-        <div key={course.name}>
-          <p className="font-firaCode text-lime-400 dark:text-red-500  font-light text-xs">
-            {course.name} - {course.company}
-          </p>
-          <span className="font-firaCode text-xs font-light text-neutral-50">
-            {course.time}
-          </span>
+        <div key={cr.name}>
+          <Text text={cr.name} color="highlight" mode="semi-bold" isDark />
+          <Text text={cr.time} size="xs" mode="extra-light" />
         </div>
       );
     });
@@ -29,15 +25,9 @@ export default function Home() {
     return data.education.map((ed) => {
       return (
         <div key={ed.title} className="pb-2">
-          <p className="font-firaCode text-lime-400 dark:text-red-500  font-light text-xs">
-            {ed.institute}
-          </p>
-          <p className="font-firaCode text-neutral-200 font-light text-xs">
-            {ed.title}
-          </p>
-          <p className="font-firaCode text-neutral-50 font-light text-xs">
-            {ed.time}
-          </p>
+          <Text text={ed.institute} color="highlight" mode="semi-bold" isDark />
+          <Text text={ed.title} />
+          <Text text={ed.time} color="opaque" size="xs" isDark />
         </div>
       );
     });
@@ -46,14 +36,26 @@ export default function Home() {
   function renderLanguage() {
     return data.programmingLanguages.map((lang) => {
       return (
-        <div key={lang.name} className="pb-3">
-          <p className="font-firaCode text-lime-400 dark:text-red-500 font-light text-xs">
-            {lang.name}
-          </p>
-          <p className="font-firaCode text-neutral-200 font-light text-xs">
-            {lang.experience}
-          </p>
-        </div>
+        <Skill
+          text={lang.name}
+          subText={lang.experience}
+          key={lang.name}
+          url={lang.logo}
+        />
+      );
+    });
+  }
+
+  function renderTechs() {
+    return data.techStacks.map((tech) => {
+      return (
+        <Skill
+          text={tech.name}
+          subText={tech.description}
+          key={tech.name}
+          url={tech.logo}
+          hover={tech.experience}
+        />
       );
     });
   }
@@ -66,9 +68,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-4 md:p-6 pt-4 pb-6 bg-neutral-200 dark:bg-zinc-800 min-h-screen">
-        <div className=" bg-zinc-800 rounded-md shadow-lg dark:shadow-red-900 max-w-5xl m-auto">
-          <div className="bg-slate-200 dark:bg-gray-600 p-1 shadow-md border-solid border-x border-y border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md">
+      <main className="p-4 md:p-6 pt-4 pb-6 bg-neutral-200 dark:bg-zinc-700 min-h-screen">
+        <div className=" bg-zinc-800 dark:bg-black rounded-md shadow-md max-w-5xl m-auto">
+          <div className="bg-slate-200 dark:bg-zinc-800 p-1 shadow-md border-solid border-x border-y border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md">
             <div className="inline-flex flex-row">
               {data.socialMedia.map((social) => {
                 return (
@@ -84,37 +86,50 @@ export default function Home() {
               Eduardo B. Vásquez Lavaire
             </h1>
             <div className="inline-flex flex-row">
-              <FaLightbulb
-                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+              <TfiLightBulb
+                className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
                 onClick={() => setdarkMode(!darkMode)}
               />
-              <FaGithub
-                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+              <TfiGithub
+                className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
                 onClick={() => setdarkMode(!darkMode)}
               />
-              <FaDownload
-                className="cursor-pointer mt-2 mr-3 dark:text-red-700"
+              <TfiDownload
+                className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
                 onClick={() => setdarkMode(!darkMode)}
               />
             </div>
           </div>
           <div className="p-3">
-            <h1 className="font-normal text-center text-neutral-200 dark:text-red-500 font-firaCode m-auto text-sm hideXs:hidden">
+            <h1 className="font-normal text-center text-neutral-200 dark:text-lime-400 font-firaCode m-auto text-sm hideXs:hidden">
               Eduardo B. Vásquez Lavaire
             </h1>
 
-            <div>
-              <SectionTitle text="Skills" icon="FaCode" size="20" />
-              {renderLanguage()}
+            <div className="inline-flex flex-col w-full">
+              <SectionTitle
+                text="Skills"
+                icon="TfiAngleDoubleRight"
+                size="16"
+              />
+              <div className="flex gap-2.5 flex-wrap w-full justify-center">
+                {renderLanguage()}
+              </div>
+            </div>
+
+            <div className="inline-flex flex-col w-full">
+              <SectionTitle text="Tech stacks" icon="TfiSettings" size="16" />
+              <div className="flex gap-2.5 flex-wrap w-full justify-center">
+                {renderTechs()}
+              </div>
             </div>
 
             <div>
-              <SectionTitle text="Education" icon="FaBook" size="20" />
+              <SectionTitle text="Education" icon="TfiBook" size="16" />
               {renderEducation()}
             </div>
 
             <div>
-              <SectionTitle text="Courses" icon="FaBook" size="20" />
+              <SectionTitle text="Courses" icon="TfiBookmark" size="16" />
               {renderCourses()}
             </div>
           </div>

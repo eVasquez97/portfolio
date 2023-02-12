@@ -1,10 +1,11 @@
 import { getIcon } from "@/utils/constants";
+import { Text } from "../atoms";
 
 const SectionTitle = ({ text, icon, size }) => {
   return (
     <div className="inline-flex flex-row text-neutral-200 items-center content-center mb-4 mt-4">
       {getIcon(icon, size)}
-      <p className="font-firaCode ml-2 font-semibold">{text}</p>
+      <Text text={text} mode="semi-bold" className="ml-2" />
     </div>
   );
 };

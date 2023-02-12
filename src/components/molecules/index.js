@@ -1,3 +1,4 @@
 import SectionTitle from "./SectionTitle";
+import Skill from "./Skill";
 
-export default SectionTitle;
+export { SectionTitle, Skill };

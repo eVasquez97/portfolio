@@ -1,3 +1,4 @@
 import MediaButton from "./MediaButton";
+import Text from "./Text";
 
-export default MediaButton;
+export { MediaButton, Text };

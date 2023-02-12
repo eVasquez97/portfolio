@@ -5,16 +5,14 @@
       "title": "Computer Science Engineer",
       "time": "2015 - June/2020",
       "image": "",
-      "url": "https://unicah.edu/",
-      "headerColor": "#018f45"
+      "url": "https://unicah.edu/"
     },
     {
       "institute": "El Buen Pastor Episcopal Institute",
       "title": "Bachelor's degree",
       "time": "2003 - 2015",
       "image": "",
-      "url": "https://www.facebook.com/EBPHonduras/",
-      "headerColor": ""
+      "url": "https://www.facebook.com/EBPHonduras/"
     }
   ],
   "courses": [
@@ -58,25 +56,25 @@
   "programmingLanguages": [
     {
       "name": "React Js",
-      "experience": "> 3 years",
+      "experience": " 4 years",
       "description": "",
       "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg"
     },
     {
       "name": "React Native",
-      "experience": "̴  2 years",
+      "experience": "3.5 years",
       "description": "",
       "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg"
     },
     {
       "name": "Python",
-      "experience": "1 year",
+      "experience": "2.5 years",
       "description": "",
       "logo": "https://cdn.worldvectorlogo.com/logos/python-5.svg"
     },
     {
       "name": "C#",
-      "experience": "2 and a half years",
+      "experience": "2.5 years",
       "description": "",
       "logo": "https://cdn.worldvectorlogo.com/logos/c--4.svg"
     },
@@ -86,33 +84,126 @@
       "description": "",
       "logo": "https://cdn.worldvectorlogo.com/logos/c.svg"
     },
+
     {
-      "name": "Visual Basic",
-      "experience": "  2 years",
+      "name": "MongoDB",
+      "experience": "3 years",
       "description": "̴",
-      "logo": "https://cdn.worldvectorlogo.com/logos/vbnet-1.svg"
+      "logo": "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "experience": "4 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/postgresql.svg"
+    },
+    {
+      "name": "SQL Server",
+      "experience": "5 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/microsoft-sql-server-1.svg"
+    },
+    {
+      "name": "GraphQL",
+      "experience": "2.5 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg"
+    },
+    {
+      "name": "Xamarin",
+      "experience": "2 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/xamarin.svg"
+    },
+    {
+      "name": "Arduino",
+      "experience": "Personal proyects",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/arduino-1.svg"
+    },
+    {
+      "name": "Heroku",
+      "experience": "2.5 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/heroku-4.svg"
+    },
+    {
+      "name": "Azure",
+      "experience": "2.5 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/azure-1.svg"
+    },
+    {
+      "name": "AWS",
+      "experience": "2 years",
+      "description": "",
+      "logo": "https://cdn.worldvectorlogo.com/logos/aws-2.svg"
+    }
+  ],
+  "techStacks": [
+    {
+      "name": "Web - MERN",
+      "experience": "3 years",
+      "description": "MongoDB + Express + ReactJs + NodeJs",
+      "logo": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"
+    },
+    {
+      "name": "Web",
+      "experience": "2 years",
+      "description": "TypeScript + Python + MongoDB",
+      "logo": "https://cdn.worldvectorlogo.com/logos/typescript.svg"
+    },
+    {
+      "name": "Web",
+      "experience": "2.5 years",
+      "description": "NextJs + NodeJs + MongoDB",
+      "logo": "https://cdn.worldvectorlogo.com/logos/next-js.svg"
+    },
+    {
+      "name": "Mobile",
+      "experience": "2 years",
+      "description": "React Native + C# + MongoDB",
+      "logo": "https://cdn.worldvectorlogo.com/logos/android.svg"
+    },
+    {
+      "name": "Mobile",
+      "experience": "1 years",
+      "description": "React Native + Python + MongoDB",
+      "logo": "https://cdn.worldvectorlogo.com/logos/apple.svg"
+    },
+    {
+      "name": "Mobile",
+      "experience": "2.5 years",
+      "description": "React Native + Firebase + NodeJs",
+      "logo": "https://cdn.worldvectorlogo.com/logos/react-native-firebase-1.svg"
+    },
+    {
+      "name": "Mobile",
+      "experience": "1.5 years",
+      "description": "Xamarin + MySQlite",
+      "logo": "https://cdn.worldvectorlogo.com/logos/xamarin.svg"
     }
   ],
   "socialMedia": [
     {
       "name": "Facebook",
       "url": "https://www.facebook.com/eduardo.b.vasquez.1/",
-      "icon": "FaFacebookF"
+      "icon": "TfiFacebook"
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/eduardovasquez97/?hl=es-la",
-      "icon": "FaInstagram"
+      "icon": "TfiInstagram"
     },
     {
       "name": "Twitter",
       "url": "https://twitter.com/EBladimirVL",
-      "icon": "FaTwitter"
+      "icon": "TfiTwitter"
     },
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/eduardo-v%C3%A1squez-lavaire-aba5bb1a0/",
-      "icon": "FaLinkedinIn"
+      "icon": "TfiLinkedin"
     }
   ]
 }
