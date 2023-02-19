@@ -22,6 +22,15 @@ export const allIcons = {
   TfiBookmark,
 };
 
+export const tabs = [
+  { name: "Home", key: 1 },
+  { name: "Skills", key: 2 },
+  { name: "Experience", key: 3 },
+  { name: "Contact", key: 4 },
+];
+
+export const DEFAULT_TAB = "bg-zinc-800 dark:bg-black";
+
 export function getIcon(icon, size) {
   const Icon = allIcons[icon];
   return <Icon size={size ?? "14"} />;

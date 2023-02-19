@@ -186,6 +186,11 @@
   ],
   "socialMedia": [
     {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/eduardo-v%C3%A1squez-lavaire-aba5bb1a0/",
+      "icon": "TfiLinkedin"
+    },
+    {
       "name": "Facebook",
       "url": "https://www.facebook.com/eduardo.b.vasquez.1/",
       "icon": "TfiFacebook"
@@ -199,11 +204,6 @@
       "name": "Twitter",
       "url": "https://twitter.com/EBladimirVL",
       "icon": "TfiTwitter"
-    },
-    {
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/eduardo-v%C3%A1squez-lavaire-aba5bb1a0/",
-      "icon": "TfiLinkedin"
     }
   ]
 }

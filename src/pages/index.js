@@ -1,64 +1,14 @@
 import Head from "next/head";
 import { useState } from "react";
-import { MediaButton, Text } from "@/components/atoms";
-import { SectionTitle, Skill } from "@/components/molecules";
+import { MediaButton, Tab, Text } from "@/components/atoms";
 import { TfiLightBulb } from "react-icons/tfi";
-import { TfiDownload } from "react-icons/tfi";
-import { TfiGithub } from "react-icons/tfi";
 import data from "../utils/data.json";
+import { DEFAULT_TAB, tabs } from "@/utils/constants";
+import { Education, Experience, SkillsSection } from "@/components/organisms";
 
 export default function Home() {
   const [darkMode, setdarkMode] = useState(false);
-
-  function renderCourses() {
-    return data.courses.map((cr) => {
-      return (
-        <div key={cr.name}>
-          <Text text={cr.name} color="highlight" mode="semi-bold" isDark />
-          <Text text={cr.time} size="xs" mode="extra-light" />
-        </div>
-      );
-    });
-  }
-
-  function renderEducation() {
-    return data.education.map((ed) => {
-      return (
-        <div key={ed.title} className="pb-2">
-          <Text text={ed.institute} color="highlight" mode="semi-bold" isDark />
-          <Text text={ed.title} />
-          <Text text={ed.time} color="opaque" size="xs" isDark />
-        </div>
-      );
-    });
-  }
-
-  function renderLanguage() {
-    return data.programmingLanguages.map((lang) => {
-      return (
-        <Skill
-          text={lang.name}
-          subText={lang.experience}
-          key={lang.name}
-          url={lang.logo}
-        />
-      );
-    });
-  }
-
-  function renderTechs() {
-    return data.techStacks.map((tech) => {
-      return (
-        <Skill
-          text={tech.name}
-          subText={tech.description}
-          key={tech.name}
-          url={tech.logo}
-          hover={tech.experience}
-        />
-      );
-    });
-  }
+  const [selectedTab, setTab] = useState("Home");
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -68,9 +18,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-4 md:p-6 pt-4 pb-6 bg-neutral-200 dark:bg-zinc-700 min-h-screen">
-        <div className=" bg-zinc-800 dark:bg-black rounded-md shadow-md max-w-5xl m-auto">
-          <div className="bg-slate-200 dark:bg-zinc-800 p-1 shadow-md border-solid border-x border-y border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md">
+      <main className="p-4 md:p-6 pt-8 pb-8 bg-neutral-200 dark:bg-zinc-700 min-h-screen">
+        <div className=" bg-zinc-800 dark:bg-black rounded-md shadow-md max-w-5xl m-auto min-h-[90vh]">
+          <div
+            className="bg-slate-200 dark:bg-zinc-900 p-1 shadow-md border-solid border-x border-y
+           border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md"
+          >
             <div className="inline-flex flex-row">
               {data.socialMedia.map((social) => {
                 return (
@@ -82,56 +35,37 @@ export default function Home() {
                 );
               })}
             </div>
-            <h1 className="font-semibold text-center dark:text-neutral-200 text-slate-800 font-firaCode m-auto text-sm showXs:hidden">
-              Eduardo B. Vásquez Lavaire
-            </h1>
+
             <div className="inline-flex flex-row">
               <TfiLightBulb
                 className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
                 onClick={() => setdarkMode(!darkMode)}
               />
-              <TfiGithub
-                className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
-                onClick={() => setdarkMode(!darkMode)}
-              />
-              <TfiDownload
-                className="cursor-pointer mt-2 mr-3 dark:text-neutral-200"
-                onClick={() => setdarkMode(!darkMode)}
-              />
             </div>
           </div>
+
+          <div
+            className="bg-zinc-700 dark:bg-zinc-800 border-solid border-x border-zinc-800 
+          inline-flex min-w-full"
+          >
+            {tabs.map((tab) => {
+              return (
+                <Tab
+                  key={tab.key}
+                  name={tab.name}
+                  background={selectedTab === tab.name ? DEFAULT_TAB : ""}
+                  action={() => setTab(tab.name)}
+                />
+              );
+            })}
+          </div>
+
           <div className="p-3">
-            <h1 className="font-normal text-center text-neutral-200 dark:text-lime-400 font-firaCode m-auto text-sm hideXs:hidden">
-              Eduardo B. Vásquez Lavaire
-            </h1>
+            {selectedTab === "Skills" && <SkillsSection skills={data} />}
 
-            <div className="inline-flex flex-col w-full">
-              <SectionTitle
-                text="Skills"
-                icon="TfiAngleDoubleRight"
-                size="16"
-              />
-              <div className="flex gap-2.5 flex-wrap w-full justify-center">
-                {renderLanguage()}
-              </div>
-            </div>
+            {selectedTab === "Experience" && <Experience exp={data} />}
 
-            <div className="inline-flex flex-col w-full">
-              <SectionTitle text="Tech stacks" icon="TfiSettings" size="16" />
-              <div className="flex gap-2.5 flex-wrap w-full justify-center">
-                {renderTechs()}
-              </div>
-            </div>
-
-            <div>
-              <SectionTitle text="Education" icon="TfiBook" size="16" />
-              {renderEducation()}
-            </div>
-
-            <div>
-              <SectionTitle text="Courses" icon="TfiBookmark" size="16" />
-              {renderCourses()}
-            </div>
+            {selectedTab === "Home" && <Education ed={data} />}
           </div>
         </div>
       </main>
