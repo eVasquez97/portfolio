@@ -5,6 +5,7 @@ import { TfiLightBulb } from "react-icons/tfi";
 import data from "../utils/data.json";
 import { DEFAULT_TAB, tabs } from "@/utils/constants";
 import { Education, Experience, SkillsSection } from "@/components/organisms";
+import Intro from "@/components/organisms/Intro";
 
 export default function Home() {
   const [darkMode, setdarkMode] = useState(false);
@@ -18,11 +19,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-4 md:p-6 pt-8 pb-8 bg-neutral-200 dark:bg-zinc-700 min-h-screen">
-        <div className=" bg-zinc-800 dark:bg-black rounded-md shadow-md max-w-5xl m-auto min-h-[90vh]">
+      <main className="p-4 md:p-6 py-8 bg-neutral-200 dark:bg-zinc-700 min-h-screen">
+        <div className=" bg-zinc-800 dark:bg-black rounded-md shadow-lg shadow-zinc-800 max-w-5xl m-auto min-h-[90vh]">
           <div
-            className="bg-slate-200 dark:bg-zinc-900 p-1 shadow-md border-solid border-x border-y
-           border-zinc-800 inline-flex flex-row min-w-full justify-between rounded-t-md"
+            className="bg-gray-300 dark:bg-zinc-900 p-1 shadow-md border-solid border-x border-y
+           border-gray-300 dark:border-zinc-900 inline-flex flex-row min-w-full justify-between rounded-t-md"
           >
             <div className="inline-flex flex-row">
               {data.socialMedia.map((social) => {
@@ -44,10 +45,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            className="bg-zinc-700 dark:bg-zinc-800 border-solid border-x border-zinc-800 
-          inline-flex min-w-full"
-          >
+          <div className="bg-gray-400 dark:bg-zinc-800 inline-flex min-w-full">
             {tabs.map((tab) => {
               return (
                 <Tab
@@ -65,7 +63,12 @@ export default function Home() {
 
             {selectedTab === "Experience" && <Experience exp={data} />}
 
-            {selectedTab === "Home" && <Education ed={data} />}
+            {selectedTab === "Home" && (
+              <>
+                <Intro cover={data.cover} />
+                <Education ed={data} />
+              </>
+            )}
           </div>
         </div>
       </main>

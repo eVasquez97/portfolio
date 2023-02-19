@@ -29,7 +29,7 @@ export const tabs = [
   { name: "Contact", key: 4 },
 ];
 
-export const DEFAULT_TAB = "bg-zinc-800 dark:bg-black";
+export const DEFAULT_TAB = "bg-gray-300 dark:bg-zinc-900";
 
 export function getIcon(icon, size) {
   const Icon = allIcons[icon];
@@ -61,6 +61,12 @@ export function getCurrentColor(color) {
       return "text-blue-300";
     case "sky-300":
       return "text-sky-300";
+    case "inactive":
+      return "text-zinc-600 dark:text-neutral-500";
+    case "black":
+      return "text-black";
+    case "alt":
+      return "text-black dark:text-white";
     default:
       return "text-neutral-200";
   }
